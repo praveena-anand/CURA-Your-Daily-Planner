@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner for Women</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffe4e1;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff0f5;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+            border: 2px solid #ff69b4;
+        }
+        h2 {
+            color: #ff1493;
+            text-align: center;
+            font-family: 'Brush Script MT', cursive;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ffebf0;
+            border-radius: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ff69b4;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .energy-level, .energy-cost {
+            display: flex;
+            justify-content: space-between;
+            background: #ffbfd1;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .qr-placeholder {
+            width: 100px;
+            height: 100px;
+            background: #ffbfd1;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #ff1493;
+        }
+        label {
+            font-weight: bold;
+            color: #d63384;
+        }
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #ff1493;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function generateFocusWord() {
+            const words = ["Confidence", "Resilience", "Courage", "Balance", "Growth", "Grace", "Empowerment", "Joy", "Strength", "Hope"];
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function generateQuote() {
+            const quotes = [
+                "Keep going, you are doing great!",
+                "You are stronger than you think.",
+                "Believe in yourself every day.",
+                "Small steps lead to big achievements.",
+                "Your energy creates your reality.",
+                "Balance is the key to happiness.",
+                "Every day is a fresh start.",
+                "Dream big and stay positive.",
+                "Your passion fuels your success.",
+                "Self-care is a priority, not a luxury."
+            ];
+            return quotes[Math.floor(Math.random() * quotes.length)];
+        }
+
+        function displayGeneratedContent() {
+            document.getElementById("focus-word").value = generateFocusWord();
+            document.getElementById("quote-display").innerText = generateQuote();
+        }
+    </script>
+</head>
+<body onload="displayGeneratedContent()">
+    <div class="container">
+        <h2>💖CURA - Your Daily Planner 💖</h2>
+        
+        <div class="section">
+            <h3>☀️ Morning Check-In</h3>
+            <label>How do I feel today?</label>
+            <div class="energy-level">
+                <input type="radio" name="energy" value="low"> 🔴 Low Energy
+                <input type="radio" name="energy" value="medium"> 🟡 Medium Energy
+                <input type="radio" name="energy" value="high"> 🟢 High Energy
+            </div>
+            <label>🧠 Focus Word for Today:</label>
+            <input type="text" id="focus-word" readonly>
+            <div class="quote" id="quote-display"></div>
+        </div>
+        
+        <div class="section">
+            <h3>📌 Planned Tasks & Energy Allocation</h3>
+            <label>Top 3 Goals for Today:</label>
+            <textarea rows="2" placeholder="Write your goals here..."></textarea>
+            
+            <label>Task 1:</label>
+            <input type="text" placeholder="What do I need to accomplish?">
+            <label>🔋 Energy Cost:</label>
+            <div class="energy-cost">
+                <input type="radio" name="task1-energy"> 
+                <input type="radio" name="task1-energy"> 
+                <input type="radio" name="task1-energy">
+                <input type="radio" name="task1-energy"> 
+                <input type="radio" name="task1-energy"> 
+            </div>
+            
+            <label>Task 2:</label>
+            <input type="text" placeholder="What do I need to accomplish?">
+            <label>🔋 Energy Cost:</label>
+            <div class="energy-cost">
+                <input type="radio" name="task2-energy"> 
+                <input type="radio" name="task2-energy"> 
+                <input type="radio" name="task2-energy">
+                <input type="radio" name="task2-energy"> 
+                <input type="radio" name="task2-energy"> 
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>💖 Self-Care & Passion Pursuit</h3>
+            <label>Planned Self-Care Activity:</label>
+            <input type="text" placeholder="Your moment to recharge!">
+            <label>Focus on Your Passion Today:</label>
+            <input type="text" placeholder="What brings you joy and energy?">
+        </div>
+        
+        <div class="section">
+            <h3>📲 Personalized Support</h3>
+            <p>Enter your email or phone number to receive daily self-care tips:</p>
+            <input type="text" placeholder="Enter your email or phone number">
+            <p>Or scan this QR code to receive a tip instantly!</p>
+            <div class="qr-placeholder">QR Code</div>
+        </div>
+
+    </div>
+</body>
+</html>
